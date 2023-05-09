@@ -1,0 +1,74 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrapper{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(0, 68, 255);
+    display: flex;
+    justify-content: center;
+}
+.box-container{
+    width: 80%;
+    height: 80%;
+    margin-top: 100px;
+    background-color: rgb(0, 68, 255);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 20px;
+    grid-template-areas:"masonry responsive overlap overlap"
+                        "masonry fluid explicitly-placed negative-space"
+                        "flexible-breadth masonry-2 explicitly placed masonry-3"
+                        "dom-order masonry2 named-tracks named-tracks";   
+}
+.masonry, .responsive, .overlap, .fluid, .explicitly-placed, 
+.negative-space, .flexible-breadth, .masonry-2, .masonry-3, .dom-order, .masonry2, .named-tracks{
+    background-color: white;
+}
+.masonry{
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.responsive{
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+.overlap{
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
+.fluid{
+    grid-row:2/2;
+    grid-column: 2/3;
+}
+.explicitly-placed{
+    grid-row: 2/4;
+    grid-column: 3/4;
+}
+.negative-space{
+    grid-column: 4/5;
+    grid-row: 2/3;
+}
+.flexible-breadth{
+    grid-row: 3/4;
+    grid-column: 1/2;
+}
+.masonry-2{
+    grid-row: 3/5;
+}
+.masonry-3{
+    grid-row: 3/4;
+    grid-column: 4/5;
+}
+.dom-order{
+    grid-row: 4/5;
+    grid-column: 1/2;
+}
+.named-tracks{
+    grid-row: 4/5;
+    grid-column: 3/5;
+}
+
